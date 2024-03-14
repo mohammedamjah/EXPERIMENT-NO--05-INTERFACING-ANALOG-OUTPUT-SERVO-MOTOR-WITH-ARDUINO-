@@ -1,8 +1,8 @@
-###  DATE: 
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/160887872/ee86baa0-4ced-4753-82c7-3388623ac774)###  DATE: 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME:M.Mohammed Amjath
+###  ROLL NO :212221083009
+###  DEPARTMENT:Mechanicl Engineerine
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -28,7 +28,7 @@ Servo motors are used for angular positioning, such as in radio control airplane
 
 
 ![image](https://user-images.githubusercontent.com/36288975/163544439-1f477927-fcd4-42f0-9ce4-c863fdbf1210.png)
-
+"C:\Users\amjath m\OneDrive\Pictures\Screenshots\Screenshot 2024-03-14 112123.png"
 
 
 #### Figure-01 SERVO MOTOR SPLIT VIEW 
@@ -54,13 +54,13 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 
 
-CIRCUIT DIAGRAM
+CIRCUIT DIAGRAM"C:\Users\amjath m\OneDrive\Pictures\Screenshots\Screenshot 2024-03-14 114603.png"
  
  
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
-
+"C:\Users\amjath m\OneDrive\Pictures\Screenshots\Screenshot 2024-03-14 112211.png"
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
@@ -74,7 +74,35 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+#include<Servo.h>
+Servo s1;
+int pos =0;
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1)
+  {
+    s1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+
+  }
+   for(pos=180;pos<=180;pos+=1)
+  {
+    s1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    
+  }
+}
+
 
 
 
